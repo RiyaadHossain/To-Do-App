@@ -22,11 +22,11 @@ const Header = () => {
         />
       </div>
       <div className="flex items-center">
-        <img
+       {user && <img
           className="w-10 mr-3 rounded-full h-10 object-cover"
           src={user?.photoURL}
           alt=""
-        />
+        />}
         <span className="font-bold text-info">
           {user?.displayName ? (
             <div>
