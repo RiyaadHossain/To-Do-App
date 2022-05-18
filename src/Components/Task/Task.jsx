@@ -4,7 +4,6 @@ import { TiTick } from 'react-icons/ti';
 
 const Task = ({ taskDetails, setRefetch, refetch }) => {
   const { _id, task, description, done } = taskDetails;
-  //   const [task, setTask] = useState({})
 
   // Done Event
   const doneTask = (id) => {
