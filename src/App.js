@@ -3,11 +3,13 @@ import { Toaster } from 'react-hot-toast';
 import AddTask from "./Components/AddTask/AddTask";
 import Home from "./Components/Home/Home";
 import LogIn from "./Components/LogIn/LogIn";
+import Header from "./Components/Header/Header";
 
 
 function App() {
   return (
     <div>
+      <Header/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<LogIn/>}/>

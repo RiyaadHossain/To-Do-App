@@ -17,6 +17,7 @@ const AddTask = () => {
     const taskInfo = {
       task: e.target.task.value,
       description: e.target.description.value,
+      done: false
     };
     fetch("http://localhost:5000/addtask", {
       method: "POST",
@@ -29,6 +30,7 @@ const AddTask = () => {
       .then((data) => {
         toast.success("Task Added Successfully")
         setRefetch(!refetch);
+        e.target.reset()
       });
   };
 
@@ -69,7 +71,7 @@ const AddTask = () => {
       {/* Display Task */}
       <div className="mt-12 container mx-auto">
         {tasks.map((task) => (
-          <Task key={task._id} taskDetails={task} />
+          <Task key={task._id} setRefetch={setRefetch} refetch={refetch} taskDetails={task} />
         ))}
       </div>
     </div>
