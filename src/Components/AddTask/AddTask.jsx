@@ -7,7 +7,7 @@ const AddTask = () => {
   const [refetch, setRefetch] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/tasks")
+    fetch("https://tranquil-ravine-17163.herokuapp.com/tasks")
       .then((res) => res.json())
       .then((data) => setTasks(data));
   }, [setTasks, refetch]);
@@ -19,7 +19,7 @@ const AddTask = () => {
       description: e.target.description.value,
       done: false
     };
-    fetch("http://localhost:5000/addtask", {
+    fetch("https://tranquil-ravine-17163.herokuapp.com/addtask", {
       method: "POST",
       body: JSON.stringify(taskInfo),
       headers: {

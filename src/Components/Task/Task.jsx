@@ -7,7 +7,7 @@ const Task = ({ taskDetails, setRefetch, refetch }) => {
 
   // Done Event
   const doneTask = (id) => {
-    fetch(`http://localhost:5000/task/${id}`, {
+    fetch(`https://tranquil-ravine-17163.herokuapp.com/task/${id}`, {
       method: "PUT",
       body: JSON.stringify({ done: true }),
       headers: {
@@ -25,7 +25,7 @@ const Task = ({ taskDetails, setRefetch, refetch }) => {
 
   // Delete Event
   const deleteTask = (id) => {
-    fetch(`http://localhost:5000/task/${id}`, {
+    fetch(`https://tranquil-ravine-17163.herokuapp.com/task/${id}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
