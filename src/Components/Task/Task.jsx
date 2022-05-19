@@ -55,7 +55,7 @@ const Task = ({ taskDetails, setRefetch, refetch }) => {
             </h2>
             <p
               className={`${
-                done ? "text-gray-500 text-lg" : "text-gray-100 text-lg"
+                done ? "text-gray-500 text-lg line-through" : "text-gray-100 text-lg"
               } `}
             >
               {description}
