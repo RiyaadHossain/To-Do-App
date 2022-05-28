@@ -1,6 +1,8 @@
 import React from "react";
 import toast from "react-hot-toast";
-import { TiTick } from 'react-icons/ti';
+import { TiTick } from "react-icons/ti";
+import { RiDeleteBack2Fill } from "react-icons/ri";
+import { ImCross } from "react-icons/im";
 
 const Task = ({ taskDetails, setRefetch, refetch }) => {
   const { _id, task, description, done } = taskDetails;
@@ -47,7 +49,7 @@ const Task = ({ taskDetails, setRefetch, refetch }) => {
             <h2
               className={`${
                 done
-                  ? " line-through text-accent font-bold text-xl"
+                  ? " text-[#213a45] font-bold text-xl"
                   : "text-accent font-bold text-xl"
               } `}
             >
@@ -55,7 +57,7 @@ const Task = ({ taskDetails, setRefetch, refetch }) => {
             </h2>
             <p
               className={`${
-                done ? "text-gray-500 text-lg line-through" : "text-gray-100 text-lg"
+                done ? "text-gray-600 text-lg " : "text-gray-100 text-lg"
               } `}
             >
               {description}
@@ -63,7 +65,13 @@ const Task = ({ taskDetails, setRefetch, refetch }) => {
           </div>
           <div>
             {done ? (
-              <p className="text-success flex items-center font-semibold text-lg"><TiTick className="text-success mr-1 text-xl"/> <span>Task Completd</span></p>
+              <p className="text-success flex items-center font-semibold text-lg">
+                <div className="flex items-center">
+                  <TiTick className="text-success mr-1 text-xl" />
+                  <span>Task Completd</span>
+                </div>
+                <ImCross onClick={() => deleteTask(_id)} className="text-error border-4 border-red-400 p-1 ml-4 text-3xl rounded-full " />
+              </p>
             ) : (
               <div>
                 <button

@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import toast from 'react-hot-toast';
+import auth from "../Firebase/Firebase";
 import Task from "../Task/Task";
 
 const AddTask = () => {
+  const [user] = useAuthState(auth)
   const [tasks, setTasks] = useState([]);
   const [refetch, setRefetch] = useState(false);
 
   useEffect(() => {
-    fetch("https://tranquil-ravine-17163.herokuapp.com/tasks")
+    fetch(`https://tranquil-ravine-17163.herokuapp.com/tasks/${user.email}`)
       .then((res) => res.json())
       .then((data) => setTasks(data));
-  }, [setTasks, refetch]);
+  }, [setTasks, refetch, user]);
 
   const postTask = (e) => {
     e.preventDefault();
     const taskInfo = {
       task: e.target.task.value,
+      email: user.email,
       description: e.target.description.value,
       done: false
     };
