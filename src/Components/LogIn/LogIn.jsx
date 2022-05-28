@@ -20,8 +20,8 @@ const LogIn = () => {
   },[user, from, navigate])
 
   return (
-    <div class="card h-screen flex items-center justify-center bg-base-100 shadow-xl">
-      <h1 className="text-center text-5xl text-primary font-bold mb-12">
+    <div class="card h-[90vh] flex items-center justify-center bg-base-100 shadow-xl">
+      <h1 className="text-center text-5xl text-sky-500 font-bold mb-12">
         Please Log In
       </h1>
       <div class="rounded-lg py-5 shadow-2xl w-96 bg-base-300">

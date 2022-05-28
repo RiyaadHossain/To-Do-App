@@ -31,7 +31,7 @@ const Header = () => {
           {user?.displayName ? (
             <div>
               
-              {user.displayName}  <button onClick={logout} className="btn ml-4 font-bold btn-xs btn-warning">Log Out</button>
+              {user.displayName}  <button onClick={logout} className="btn ml-4 font-bold btn-sm btn-warning">Log Out</button>
             </div>
           ) : (
             <span className="font-bold text-info">User</span>

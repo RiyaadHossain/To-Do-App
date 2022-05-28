@@ -1,7 +1,6 @@
 import React from "react";
 import toast from "react-hot-toast";
 import { TiTick } from "react-icons/ti";
-import { RiDeleteBack2Fill } from "react-icons/ri";
 import { ImCross } from "react-icons/im";
 
 const Task = ({ taskDetails, setRefetch, refetch }) => {
